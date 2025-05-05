@@ -1,0 +1,166 @@
+/* Estilos específicos para a página de login */
+.container {
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  width: 850px;
+  min-height: 600px;
+  background-color: rgba(17, 17, 17, 0.95);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  z-index: 10;
+}
+
+.logo-container {
+  width: 40%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(34, 34, 34, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../assets/images/pattern.png');
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.logo {
+  width: 80%;
+  max-width: 200px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 41, 0.5));
+}
+
+.form-container {
+  width: 60%;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-container h1 {
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 800;
+}
+
+.form-container p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+#login-form {
+  width: 100%;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.remember input {
+  accent-color: var(--accent-color);
+}
+
+.forgot {
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.forgot:hover {
+  color: var(--accent-color);
+}
+
+.register-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.register-link a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Background com elementos de eSports */
+.esports-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/images/bg-esports.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(0.3) blur(3px);
+}
+
+.esports-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(255, 0, 41, 0.2) 100%);
+}
+
+/* Responsividade para o Login */
+@media (max-width: 900px) {
+  .login-container {
+      width: 90%;
+      flex-direction: column;
+      min-height: auto;
+  }
+
+  .logo-container {
+      width: 100%;
+      padding: 30px;
+  }
+
+  .form-container {
+      width: 100%;
+      padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+      width: 95%;
+  }
+
+  .form-container {
+      padding: 20px;
+  }
+
+  .form-container h1 {
+      font-size: 24px;
+  }
+}

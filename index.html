@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA App | Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container animate__animated animate__fadeIn">
+            <div class="logo-container">
+                <img src="assets/images/furia-logo.png" alt="FURIA Logo" class="logo animate__animated animate__pulse animate__infinite animate__slow">
+            </div>
+            <div class="form-container">
+                <h1>Bem-vindo ao FURIA App</h1>
+                <p>Entre na sua conta para acessar conteúdos exclusivos sobre seu eSport favorito</p>
+                
+                <form id="login-form">
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Senha" required>
+                    </div>
+                    <div class="remember-forgot">
+                        <div class="remember">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Lembrar de mim</label>
+                        </div>
+                        <a href="#" class="forgot">Esqueceu a senha?</a>
+                    </div>
+                    <button type="submit" class="btn-primary">ENTRAR <i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+                
+                <div class="register-link">
+                    <p>Ainda não tem uma conta? <a href="register.html">Registre-se agora</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esports-background">
+            <!-- Background dinâmico com imagens de jogos da FURIA -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+    
+</body>
+</html>

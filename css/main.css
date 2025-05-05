@@ -1,0 +1,232 @@
+/* Variáveis globais */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ff0029;
+  --accent-color: #00e5ff;
+  --bg-dark: #111111;
+  --bg-medium: #222222;
+  --text-light: #ffffff;
+  --text-muted: #aaaaaa;
+  --border-radius: 6px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --transition: all 0.3s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Container principal */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+/* Botões */
+.btn-primary {
+  background: linear-gradient(135deg, var(--secondary-color), #ff5252);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff5252, var(--secondary-color));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 0, 41, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--accent-color);
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: #88f9ff;
+  text-decoration: underline;
+}
+
+/* Inputs */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 1px solid #333;
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: rgba(0, 229, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2);
+}
+
+/* Headers */
+h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+/* Utilitários */
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 10px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.mt-3 {
+  margin-top: 30px;
+}
+
+/* Loaders */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* Animações personalizadas */
+@keyframes pulse-glow {
+  0% {
+      box-shadow: 0 0 5px 0 rgba(0, 229, 255, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 20px 5px rgba(0, 229, 255, 0.8);
+  }
+  100% {
+      box-shadow: 0 0 5px 0 rgba(0, 229, 255, 0.5);
+  }
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 28px;
+  }
+  
+  h2 {
+      font-size: 22px;
+  }
+  
+  .container {
+      flex-direction: column;
+  }
+}

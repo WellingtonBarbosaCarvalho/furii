@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA App | Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-container animate__animated animate__fadeIn">
+            <div class="logo-container">
+                <img src="assets/images/furia-logo.png" alt="FURIA Logo" class="logo animate__animated animate__pulse animate__infinite animate__slow">
+                <div class="logo-text">
+                    <h2>Junte-se à FURIA</h2>
+                    <p>Acesse conteúdos exclusivos sobre seus times favoritos</p>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <h1>Crie sua conta</h1>
+                <p>Preencha os campos abaixo para se registrar</p>
+                
+                <form id="register-form">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" placeholder="Nome completo" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Email" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" placeholder="Senha" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class="fa-solid fa-lock-open"></i>
+                            <input type="password" id="confirm-password" placeholder="Confirmar senha" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="Telefone (opcional)">
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <select id="fav-esport" required>
+                                <option value="" disabled selected>Escolha seu eSport favorito</option>
+                                <option value="csgo">CS:GO</option>
+                                <option value="valorant">Valorant</option>
+                                <option value="lol">League of Legends</option>
+                                <option value="apex">Apex Legends</option>
+                                <option value="fortnite">Fortnite</option>
+                                <option value="pubg">PUBG</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-newsletter">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">Concordo com os <a href="#" class="terms-link">Termos de Uso</a> e <a href="#" class="terms-link">Política de Privacidade</a></label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" checked>
+                            <label for="newsletter">Quero receber novidades e promoções da FURIA</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">CRIAR CONTA <i class="fa-solid fa-user-plus"></i></button>
+                </form>
+                
+                <div class="login-link">
+                    <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esports-background">
+            <!-- Background dinâmico com imagens de jogos da FURIA -->
+        </div>
+    </div>
+    
+    <!-- Modal de Termos de Uso -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Termos de Uso e Política de Privacidade</h2>
+            <div class="modal-body">
+                <p>Este é um aplicativo de demonstração para fins de teste técnico. Nenhum dado pessoal real será armazenado ou compartilhado.</p>
+                <p>Ao usar este aplicativo, você concorda com o armazenamento local (localStorage) de suas informações apenas para simulação e demonstração.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

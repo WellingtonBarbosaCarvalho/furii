@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FURIA App | Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" alt="FURIA Logo"
+          class="header-logo">
+      </div>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#" class="nav-link active" data-section="home"><i class="fa-solid fa-house"></i>
+              Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" data-section="news"><i class="fa-solid fa-newspaper"></i>
+              Notícias</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" data-section="team"><i class="fa-solid fa-users"></i>
+              Time</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" data-section="schedule"><i
+                class="fa-solid fa-calendar-days"></i> Agenda</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" data-section="socials"><i class="fa-solid fa-hashtag"></i>
+              Social</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-actions">
+        <div class="esport-selector">
+          <select id="change-esport">
+            <option value="csgo">CS:GO</option>
+            <option value="valorant">Valorant</option>
+            <option value="lol">League of Legends</option>
+            <option value="apex">Apex Legends</option>
+            <option value="fortnite">Fortnite</option>
+            <option value="pubg">PUBG</option>
+          </select>
+        </div>
+
+        <div class="user-profile">
+          <div class="user-avatar">
+            <span id="user-initial">U</span>
+          </div>
+          <div class="user-dropdown">
+            <div class="user-info">
+              <p class="user-name" id="user-name">Usuário</p>
+              <p class="user-email" id="user-email">usuario@email.com</p>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fa-solid fa-user-gear"></i> Perfil</a></li>
+              <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+              <li><a href="#" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" alt="FURIA Logo"
+        class="mobile-logo">
+      <button class="close-mobile-nav">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="#" class="mobile-nav-link active" data-section="home"><i
+            class="fa-solid fa-house"></i> Home</a></li>
+      <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" data-section="news"><i
+            class="fa-solid fa-newspaper"></i> Notícias</a></li>
+      <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" data-section="team"><i
+            class="fa-solid fa-users"></i> Time</a></li>
+      <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" data-section="schedule"><i
+            class="fa-solid fa-calendar-days"></i> Agenda</a></li>
+      <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" data-section="socials"><i
+            class="fa-solid fa-hashtag"></i> Social</a></li>
+      <li class="mobile-nav-item"><a href="#" id="mobile-logout-btn"><i class="fa-solid fa-right-from-bracket"></i>
+          Sair</a></li>
+    </ul>
+
+    <div class="mobile-esport-selector">
+      <label for="mobile-change-esport">Mudar eSport:</label>
+      <select id="mobile-change-esport">
+        <option value="csgo">CS:GO</option>
+        <option value="valorant">Valorant</option>
+        <option value="lol">League of Legends</option>
+        <option value="apex">Apex Legends</option>
+        <option value="fortnite">Fortnite</option>
+        <option value="pubg">PUBG</option>
+      </select>
+    </div>
+  </div>
+
+  <main class="dashboard-content">
+    <!-- Seção de Banner -->
+    <section class="banner-section" id="banner-section">
+      <div class="swiper-container banner-slider">
+        <div class="swiper-wrapper">
+          <!-- Slides serão adicionados dinamicamente -->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- Seção Principal (Grid) -->
+    <section class="main-content" id="main-content">
+      <div class="content-grid">
+        <!-- Coluna Principal (Esquerda/Centro) -->
+        <div class="main-column">
+          <!-- Seção de Notícias -->
+          <section class="section-container news-section" id="news-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fa-solid fa-newspaper"></i> Últimas Notícias</h2>
+              <a href="#" class="view-all" data-section="news">Ver todas <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="news-grid" id="news-grid">
+              <!-- Notícias serão carregadas dinamicamente -->
+              <div class="news-placeholder">
+                <div class="placeholder-header"></div>
+                <div class="placeholder-content"></div>
+              </div>
+              <div class="news-placeholder">
+                <div class="placeholder-header"></div>
+                <div class="placeholder-content"></div>
+              </div>
+              <div class="news-placeholder">
+                <div class="placeholder-header"></div>
+                <div class="placeholder-content"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seção de Time -->
+          <section class="section-container team-section" id="team-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fa-solid fa-users"></i> Nosso Time</h2>
+              <a href="#" class="view-all" data-section="team">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="team-carousel">
+              <div class="swiper-container team-slider">
+                <div class="swiper-wrapper" id="team-players">
+                  <!-- Jogadores serão carregados dinamicamente -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seção de Agenda -->
+          <section class="section-container schedule-section" id="schedule-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fa-solid fa-calendar-days"></i> Próximos Jogos</h2>
+              <a href="#" class="view-all" data-section="schedule">Ver agenda <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="schedule-list" id="schedule-list">
+              <!-- Jogos serão carregados dinamicamente -->
+              <div class="schedule-placeholder">
+                <div class="placeholder-teams"></div>
+                <div class="placeholder-date"></div>
+              </div>
+              <div class="schedule-placeholder">
+                <div class="placeholder-teams"></div>
+                <div class="placeholder-date"></div>
+              </div>
+              <div class="schedule-placeholder">
+                <div class="placeholder-teams"></div>
+                <div class="placeholder-date"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seção de Vídeos -->
+          <section class="section-container videos-section" id="videos-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fa-solid fa-play"></i> Vídeos</h2>
+              <a href="#" class="view-all">Ver mais <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="videos-grid" id="videos-grid">
+              <!-- Vídeos serão carregados dinamicamente -->
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar (Direita) -->
+        <div class="sidebar-column">
+          <!-- Próximo Jogo -->
+          <div class="sidebar-widget next-match-widget" id="next-match-widget" data-aos="fade-left">
+            <div class="widget-header">
+              <h3>Próximo Jogo</h3>
+            </div>
+
+            <div class="next-match-content">
+              <!-- Próximo jogo será carregado dinamicamente -->
+            </div>
+          </div>
+
+          <!-- Trend Topics -->
+          <div class="sidebar-widget trends-widget" id="trends-widget" data-aos="fade-left">
+            <div class="widget-header">
+              <h3>Trend Topics</h3>
+            </div>
+
+            <div class="trends-content">
+              <div class="trends-scroller" id="trends-scroller">
+                <!-- Trends serão carregadas dinamicamente -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Estatísticas do Time -->
+          <div class="sidebar-widget stats-widget" id="stats-widget" data-aos="fade-left">
+            <div class="widget-header">
+              <h3>Estatísticas</h3>
+            </div>
+
+            <div class="stats-content">
+              <!-- Estatísticas serão carregadas dinamicamente -->
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="sidebar-widget newsletter-widget" data-aos="fade-left">
+            <div class="widget-header">
+              <h3>Newsletter</h3>
+            </div>
+
+            <div class="newsletter-content">
+              <p>Receba novidades diretamente no seu email</p>
+              <form id="newsletter-form">
+                <div class="input-group">
+                  <input type="email" id="newsletter-email" placeholder="Seu email">
+                </div>
+                <button type="submit" class="btn-primary">Inscrever-se</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seções de Página Completa (Detalhes) -->
+    <section class="fullpage-section news-fullpage" id="news-fullpage">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-newspaper"></i> Todas as Notícias</h2>
+        <button class="back-button"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
+      </div>
+
+      <div class="fullpage-content">
+        <div class="news-fullpage-grid" id="news-fullpage-grid">
+          <!-- Notícias completas serão carregadas dinamicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="fullpage-section team-fullpage" id="team-fullpage">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-users"></i> Elenco Completo</h2>
+        <button class="back-button"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
+      </div>
+
+      <div class="fullpage-content">
+        <div class="team-fullpage-grid" id="team-fullpage-grid">
+          <!-- Jogadores completos serão carregados dinamicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="fullpage-section schedule-fullpage" id="schedule-fullpage">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-calendar-days"></i> Agenda Completa</h2>
+        <button class="back-button"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
+      </div>
+
+      <div class="fullpage-content">
+        <div class="schedule-fullpage-list" id="schedule-fullpage-list">
+          <!-- Agenda completa será carregada dinamicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="fullpage-section socials-fullpage" id="socials-fullpage">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-hashtag"></i> Social Media</h2>
+        <button class="back-button"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
+      </div>
+
+      <div class="fullpage-content">
+        <div class="socials-fullpage-grid" id="socials-fullpage-grid">
+          <!-- Conteúdo social completo será carregado dinamicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal para detalhes de notícia -->
+    <div class="modal" id="news-detail-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body" id="news-detail-content">
+          <!-- Conteúdo da notícia será carregado aqui -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para detalhes do jogador -->
+    <div class="modal" id="player-detail-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body" id="player-detail-content">
+          <!-- Detalhes do jogador serão carregados aqui -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Loader para carregamentos -->
+    <div class="global-loader" id="global-loader">
+      <div class="loader-content">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" alt="FURIA Logo"
+          class="loader-logo animate__animated animate__pulse animate__infinite">
+        <div class="loader"></div>
+        <p>Carregando...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" alt="FURIA Logo">
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>FURIA</h4>
+          <ul>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Equipes</a></li>
+            <li><a href="#">Notícias</a></li>
+            <li><a href="#">Jogos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Redes Sociais</h4>
+          <div class="social-icons">
+            <a href="https://twitter.com/FURIA" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/furiagg/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.twitch.tv/furiatv" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+            <a href="https://www.youtube.com/channel/UCE4elIT7DqDv545IA71feHg" target="_blank"><i
+                class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2023 FURIA Esports. Todos os direitos reservados.</p>
+      <p class="footer-note">Esse aplicativo é um teste técnico e não representa oficialmente a FURIA.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/teams.js"></script>
+  <script src="js/trends.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>
